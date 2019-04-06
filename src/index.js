@@ -1,7 +1,8 @@
-const $ = require('jquery');
+import $ from 'jquery';
+import './app.scss';
 
-const header = require('./scripts/header')();
-const footer = require('./scripts/footer')();
-const main = require('./scripts/main')();
+import { header } from './scripts/header';
+import { main } from './scripts/main';
+import { footer } from './scripts/footer';
 
-$('body').append(header, main, footer);
+$('body').append(header(), main(), footer());

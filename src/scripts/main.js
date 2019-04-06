@@ -1,10 +1,12 @@
-const $ = require('jquery');
-const builder = require('./builder');
+import $ from 'jquery';
+import builder from './builder';
 
-module.exports = () => {
+const main = () => {
   const content = $(`<p>Here is main content </p>`);
   content.append(new Date().toLocaleString());
 
   return builder('main', content, 'main');
 };
+
+export { main };
 

@@ -1,5 +1,7 @@
 const path = require('path');
 const HTMLPlugin = require('html-webpack-plugin');
+const CssPlugin = require('mini-css-extract-plugin');
+
 const package = require('./package.json');
 
 module.exports = {
@@ -22,6 +24,19 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
+      },
+
+      {
+        test: /\.s?css$/,
+        use: [
+          // {   
+          //   loader: 'style-loader',
+          //   options: {singleton: true}
+          // },
+          CssPlugin.loader,
+          'css-loader',
+          'sass-loader'
+        ]
       }
     ]
   },
@@ -31,12 +46,18 @@ module.exports = {
       title: package.name,
       template: './index.html',
       version: package.version
-    })
+    }),
+
+    new CssPlugin({ filename: 'main.css' })
   ],
 
   optimization: {
     splitChunks: {
       chunks: 'all'
     },
-   },   
+   },
+
+  devtool: 'source-map',
+
 };
+
