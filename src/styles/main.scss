@@ -1,9 +1,23 @@
 @import 'variables';
+@import 'function'; 
+@import 'mixin';
 
 
 .main {
+  @include round(19);
+  @include triangle(bottom);
   height: 100px;
-  color:#914141;
+  width: 50%;
+  margin: 25px;
+  padding: 15px;
+  color: getDarken(#914141);
   background-color: $color;
   font-size: $font-size;
+  line-height: getPart(50, 8);
+  border: 1px solid #ae35ff;
+}
+
+li {
+  list-style: none;
+  padding: 5px;
 }
