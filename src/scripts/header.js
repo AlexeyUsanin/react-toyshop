@@ -1,5 +1,5 @@
 import builder from './builder';
-import './header.css';
+import '../styles/header.scss';
 
 const header = () => {
   const content = '<a href="/">Logo</a>';

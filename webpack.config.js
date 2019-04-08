@@ -48,7 +48,11 @@ module.exports = {
       version: package.version
     }),
 
-    new CssPlugin({ filename: 'main.css' })
+    new CssPlugin({ 
+      // filename: 'styles-[hash].css',
+      filename: `style-${Date.now()}.css`
+
+   })
   ],
 
   optimization: {

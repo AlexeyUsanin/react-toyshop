@@ -1,5 +1,5 @@
 import builder from './builder';
-import './footer.css';
+import '../styles/footer.scss';
 
 const footer = () => {
   const content = '<p>Easycode 2019 (c)</p>';
