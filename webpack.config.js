@@ -1,8 +1,25 @@
 const path = require('path');
 const HTMLPlugin = require('html-webpack-plugin');
 const CssPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
+const args = require('yargs').argv;
 
 const package = require('./package.json');
+const isStyleEsxternal = args.env && args.env.styles;
+const plugins = [
+  new HTMLPlugin({
+    title: package.name,
+    template: './index.html',
+    version: package.version
+  }),
+
+  new webpack.HotModuleReplacementPlugin()
+
+];
+
+if (isStyleEsxternal) {
+  plugins.push(new CssPlugin({filename: 'main.css'}));
+}
 
 module.exports = {
   entry: './index.js',
@@ -21,7 +38,9 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-env'],
+            plugins: ['syntax-dynamic-import']
+
           }
         }
       },
@@ -29,11 +48,8 @@ module.exports = {
       {
         test: /\.s?css$/,
         use: [
-          // {   
-          //   loader: 'style-loader',
-          //   options: {singleton: true}
-          // },
-          CssPlugin.loader,
+          isStyleEsxternal ? 
+          CssPlugin.loader : 'style-loader',
           'css-loader',
           'sass-loader'
         ]
@@ -41,19 +57,7 @@ module.exports = {
     ]
   },
 
-  plugins: [
-    new HTMLPlugin({
-      title: package.name,
-      template: './index.html',
-      version: package.version
-    }),
-
-    new CssPlugin({ 
-      // filename: 'styles-[hash].css',
-      filename: `style-${Date.now()}.css`
-
-   })
-  ],
+  plugins,
 
   optimization: {
     splitChunks: {
@@ -63,5 +67,11 @@ module.exports = {
 
   devtool: 'source-map',
 
+  devServer: {
+    contentBase: path.resolve(__dirname, 'prod'),
+    publicPath: '/',
+    port: 1111,
+    hot: true
+   }
+   
 };
-
