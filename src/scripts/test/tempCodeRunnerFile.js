@@ -1,0 +1,3 @@
+ getName() {
+    return this.name;
+  }

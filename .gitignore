@@ -60,5 +60,8 @@ typings/
 # next.js build output
 .next
 
-## production directory
+# production directory
 prod/
+
+# vs code config
+.vscode/
