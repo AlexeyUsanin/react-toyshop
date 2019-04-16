@@ -46,6 +46,7 @@
     "yargs": "^13.2.2"
   },
   "dependencies": {
+    "@types/chai": "^4.1.7",
     "jquery": "^3.3.1"
   }
 }
