@@ -1,15 +1,20 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { Navigation } from './navigation/Navigation';
+import { Header } from './components/header/Header';
+import { Aside } from './components/aside/Aside';
+import { Main } from './components/main/Main';
+import { Footer } from './components/footer/Footer';
 
 
-const Time = () => <time>{String(new Date().toLocaleDateString())}</time>;
 
-const header = (
-  <header>
-    <h1>Hello <Time /></h1>
-    <Navigation/> 
-  </header>
+const content = (
+  <>
+    <Header />
+    <Aside />
+    <Main />
+    <Footer />
+  </>
+
 );
 
-ReactDom.render(header, document.getElementById('app'))
+ReactDom.render(content, document.getElementById('app'))
