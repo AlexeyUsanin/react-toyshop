@@ -1,15 +1,9 @@
 import React from 'react';
-import './header.scss'
+import { Navigation } from '../navigation/Navigation';
 
 export const Header = () => (
   <header className="header">
-    <ul>
-      <li>
-        <a>One</a>
-      </li>
-      <li>
-        <a>Two</a>
-      </li>
-    </ul>
+    <h4>Header</h4>
+    <Navigation />
   </header>
 );

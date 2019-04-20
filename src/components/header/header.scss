@@ -1,7 +1,8 @@
 .header {
-  position: fixed;
-  background-color: aqua;
-  width: 100%;
-  height: 60px;
-  top: 0;
+  background-color: $main_color;
+  border: $global_border;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
 }

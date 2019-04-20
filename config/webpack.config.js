@@ -4,7 +4,7 @@ const CssPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const args = require('yargs').argv;
 
-const package = require('../package');
+const package = require('../package.json');
 const isProduction = process.env.NODE_ENV === 'production';
 const isStylesExternal = args.env && args.env.styles;
 
@@ -50,7 +50,7 @@ module.exports = {
           use: [
             isStylesExternal ? CssPlugin.loader : 'style-loader',
             'css-loader',
-            // 'sass-loader'
+            'sass-loader'
           ]
         }
       ]

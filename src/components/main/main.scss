@@ -1,3 +1,35 @@
 body {
   margin: 0;
+  background-color: #d9d9d9;
+  padding: 40px;
+
+  h4 {
+    font-size: $font_size;
+  }
+}
+
+.main {
+  height: 500px;
+  background-color: $main_color;
+  border: $global_border;
+  margin: 20px 0;
+  display: flex;
+  text-align: center;
+}
+
+.aside {
+  background-color: $second_color;
+  border: 1px solid #000;
+  width: 25%;
+  margin: 40px 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main-content {
+  width: 70%;
+  background-color: $second_color;
+  margin: 80px 20px 40px;
+  border: 1px solid #000;
 }
