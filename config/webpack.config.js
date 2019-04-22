@@ -10,12 +10,16 @@ const isStylesExternal = args.env && args.env.styles;
 
 const plugins = [
   new HTMLPlugin({
-      title: package.name,
-      template: './index.html',
-      version: package.version
+    title: package.name,
+    template: './index.html',
+    version: package.version
   }),
 
-  new webpack.HotModuleReplacementPlugin()
+  new webpack.HotModuleReplacementPlugin(),
+
+  new webpack.ProvidePlugin({
+    React: 'react'
+  })
 ];
 
 if (isStylesExternal) {
@@ -33,6 +37,14 @@ module.exports = {
 
     module: {
       rules: [
+        {
+          enforce: 'pre',
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'eslint-loader',
+          options: { emitWarning: true}
+        },
+         
         {
           test: /\.js$/,
           exclude: /node_modules/,
@@ -65,6 +77,7 @@ module.exports = {
     },
 
     devtool: isProduction ? undefined : 'source-map',
+
 
     devServer: {
         publicPath: '/',

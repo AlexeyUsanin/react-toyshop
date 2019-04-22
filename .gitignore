@@ -62,6 +62,7 @@ typings/
 
 # production directory
 prod/
+dist/
 
 # vs code config
 .vscode/
