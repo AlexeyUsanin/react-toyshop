@@ -1,21 +1,16 @@
 import ReactDom from 'react-dom';
-import { Navigation } from './navigation';
+import { Header } from './components/header/Header';
+import { Main } from './components/main/Main';
+import { Footer } from './components/footer/Footer';
+import './app.scss';
 
+const content = (
+  <>
+    <Header />
+    <Main />
+    <Footer />
+  </>
 
-const Time = () => <time>{String(new Date().toLocaleDateString())}</time>;
-
-const App = () => (
-  <header>
-    <h1>
-Hello
-      <Time />
-    </h1>
-    <Navigation />
-  </header>
 );
 
-ReactDom.render(<App />, document.getElementById('app'));
-
-if (module.hot) {
-  module.hot.accept();
-}
+ReactDom.render(content, document.getElementById('app'))
