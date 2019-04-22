@@ -1,13 +1,4 @@
-body {
-  margin: 0;
-  background-color: #d9d9d9;
-  padding: 40px;
-
-  h4 {
-    font-size: $font_size;
-  }
-}
-
+@import '../../variables.scss';
 .main {
   height: 500px;
   background-color: $main_color;

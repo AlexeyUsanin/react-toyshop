@@ -1,4 +1,10 @@
 @import './variables.scss';
-@import './components/main/main.scss';
-@import './components/header/header.scss';
-@import './components/footer/footer.scss';
+body {
+  margin: 0;
+  background-color: #d9d9d9;
+  padding: 40px;
+
+  h4 {
+    font-size: $font_size;
+  }
+}
