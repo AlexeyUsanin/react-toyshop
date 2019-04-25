@@ -7,3 +7,13 @@
   align-items: center;
   justify-content: center;
 }
+
+.menu {
+  display: flex;
+
+  li {
+    list-style: none;
+    margin: 0 10px;
+    font-size: 22px;
+  }
+}

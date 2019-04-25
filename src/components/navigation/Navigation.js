@@ -1,7 +1,16 @@
 import './navigation.scss';
 
+export const Nav = props => (
+  <ul className="menu">
+    {props.list
+      .map(item => <li key={item}><a href={`/${item.toLowerCase()}`}>{item}</a></li>)}
+  </ul>
+);
+
 export const Navigation = () => (
   <nav className="nav">
-    <h4>Navigation</h4>
+    <Nav
+      list={['Home', 'Products', 'Contacts']}
+    />
   </nav>
 );
