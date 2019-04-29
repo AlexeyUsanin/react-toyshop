@@ -13,4 +13,4 @@ const content = (
 
 );
 
-ReactDom.render(content, document.getElementById('app'))
+ReactDom.render(content, document.getElementById('app'));
