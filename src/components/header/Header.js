@@ -4,7 +4,8 @@ import './header.scss';
 
 export const Header = () => (
   <header className="header">
-    <h4>Header</h4>
+    <h1>Header</h1>
     <Navigation />
+    <h2>Navigation</h2>
   </header>
 );
