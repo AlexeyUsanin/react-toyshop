@@ -16,7 +16,7 @@ export class Counter extends Component {
     return (
       <>
         <button
-          className='counter'
+          className="counter"
           onClick={this.clickHandler}
         >
           Click
