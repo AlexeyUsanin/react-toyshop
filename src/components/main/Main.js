@@ -8,6 +8,7 @@ import { TaskList } from '../task/Task';
 import { Form } from '../form/Form';
 import {Tabs, Tab} from '../tabs';
 // import img from './node.png';
+import { Input } from '../editableInput';
 import './main.scss';
 
 const tabs = [
@@ -50,6 +51,7 @@ export class Main extends Component {
 
   render() {
     const { users, posts, count } = this.state;
+    const fn = text => console.log(text);
 
     return (
       <main className="main">
@@ -81,6 +83,11 @@ export class Main extends Component {
               <h2>Hi</h2>
             </Tab>  
           </Tabs>
+          <UserList list={users} name="name" lastName="lastName" age="age" />
+          <Counter />
+          <Button />
+          <ToggleContent />
+          <Input prop={fn}/>
         </div>
       </main>
     );

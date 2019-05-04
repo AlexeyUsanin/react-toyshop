@@ -1,0 +1,25 @@
+.editable-input {
+  display: flex;
+  span,
+  input {
+    width: 200px;
+    background: #e7e7e7;
+    text-align: left;
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  input {
+    height: 20px;
+
+    &:focus {
+      background-color: #eee;
+      border: 1px solid blue;
+    }
+  }
+
+  span {
+    height: 20px;
+    cursor: pointer;
+  }
+}
