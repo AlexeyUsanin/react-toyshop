@@ -5,6 +5,7 @@ import { Counter } from '../counter/Counter';
 import { Button } from '../button/Button';
 import { ToggleContent } from '../button/ToggleButton';
 import { TaskList } from '../task/Task';
+import { Form } from '../form/Form';
 import './main.scss';
 
 const Aside = () => (
@@ -32,6 +33,7 @@ export class Main extends Component {
           <Counter />
           <Button />
           <ToggleContent />
+          <Form />
         </div>
       </main>
     );
