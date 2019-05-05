@@ -6,10 +6,6 @@ export class TaskList extends Component {
     waiting: 0
   };
 
-  constructor(props) {
-    super(props);
-  }
-
   addTask = () => {
     const { all } = this.state;
 

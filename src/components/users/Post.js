@@ -1,19 +1,23 @@
 
-const Post = ({posts}) => posts.map(({id, title, body}) => (
+const Post = ({ posts }) => posts.map(({ id, title, body }) => (
   <li key={id}>
-    <strong>{title}</strong><br />
-   {body}
+    <strong>{title}</strong>
+    <br />
+    {body}
   </li>
 ));
 
-export const PostList = ({posts}) => {
+export const PostList = (props) => {
+  const { posts } = props;
+
   return (
-    <div>
+    <div className="post-list">
+      <h2>Posts List</h2>
       <ul>
-          <Post
-            posts={posts}
-          />
+        <Post
+          posts={posts}
+        />
       </ul>
     </div>
-  )
-}
+  );
+};
