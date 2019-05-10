@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export const users = [
   { name: 'John', lastName: 'Petrov', age: 45 },
   { name: 'Bill', lastName: 'Ivanov', age: 23 }
@@ -30,3 +32,8 @@ export const UserList = props => (
  }
   </ul>
 );
+
+UserList.propTypes = {
+  list: PropTypes.array,
+  onClick: PropTypes.func
+}

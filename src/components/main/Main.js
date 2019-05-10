@@ -6,7 +6,14 @@ import { Button } from '../button/Button';
 import { ToggleContent } from '../button/ToggleButton';
 import { TaskList } from '../task/Task';
 import { Form } from '../form/Form';
+import {Tabs, Tab} from '../tabs';
 import './main.scss';
+
+const tabs = [
+  {id: 0, title: 'Tab 1', content: 'Some text is here'},
+  {id: 1, title: 'Tab 2', content: 'Another content'},
+  {id: 2, title: 'Tab 1', content: 'Third text'}
+];
 
 const Aside = () => (
   <aside className="aside">
@@ -29,11 +36,16 @@ export class Main extends Component {
             to={19}
             even
           />
-          <UserList list={users} name="name" lastName="lastName" age="age" />
-          <Counter />
-          <Button />
-          <ToggleContent />
-          <Form />
+          <UserList list={users} name="name" lastName="lastName" age="age" /> 
+          <Tabs>
+            <Tab tittle="One">
+              <h2>Hey</h2>
+            </Tab>
+
+            <Tab tittle="Two">
+              <h2>Hi</h2>
+            </Tab>  
+          </Tabs>
         </div>
       </main>
     );
