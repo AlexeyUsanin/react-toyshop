@@ -3,6 +3,8 @@ const HTMLPlugin = require('html-webpack-plugin');
 const CssPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const args = require('yargs').argv;
+const copyPlugin = require('copy-webpack-plugin');
+const urlLoader = require('url-loader');
 
 const package = require('../package.json');
 const isProduction = process.env.NODE_ENV === 'production';
@@ -20,7 +22,11 @@ const plugins = [
   new webpack.ProvidePlugin({
     React: 'react',
     Component: ['react', 'Component']
-  })
+  }),
+
+  new copyPlugin([
+    {from: '*/**/*.png', to: 'images/[name].[ext]'}
+  ])
 ];
 
 if (isStylesExternal) {
@@ -65,7 +71,7 @@ module.exports = {
             'css-loader',
             'sass-loader'
           ]
-        }
+        },
       ]
     },
 

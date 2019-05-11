@@ -1,32 +1,29 @@
 import React from 'react';
-import { Numbers } from '../numbers';
-import { Counter } from '../counter';
-import { Button, ToggleContent } from '../button';
-import { TaskList } from '../task';
-import { PostList, UserList } from '../users';
-import { Timer } from '../timer';
-import { Mount } from '../mount';
+import { Numbers } from '../numbers/Numbers';
+import { UserList, users } from '../users/Users';
+import { Counter } from '../counter/Counter';
+import { Button } from '../button/Button';
+import { ToggleContent } from '../button/ToggleButton';
+import { TaskList } from '../task/Task';
+import { Form } from '../form/Form';
+import {Tabs, Tab} from '../tabs';
+// import img from './node.png';
 import './main.scss';
 
-export class Aside extends Component {
-  state = {
-    shown: true
-  }
+const tabs = [
+  {id: 0, title: 'Tab 1', content: 'Some text is here'},
+  {id: 1, title: 'Tab 2', content: 'Another content'},
+  {id: 2, title: 'Tab 1', content: 'Third text'}
+];
 
-  render() {
-    const { shown } = this.state;
-    return (
-      <aside className="aside">
-        <h3>Aside</h3>
-        <TaskList
-          name="Alexey"
-        />
-        <button onClick={() => this.setState({ shown: !shown })}>{shown ? 'Hide Time' : 'Show Time'}</button>
-        {shown && <Timer />}
-      </aside>
-    );
-  }
-}
+const Aside = () => (
+  <aside className="aside">
+    <h3>Aside</h3>
+    <TaskList
+      name="Alexey"
+    />
+  </aside>
+);
 
 export class Main extends Component {
   constructor(props) {
@@ -56,7 +53,6 @@ export class Main extends Component {
 
     return (
       <main className="main">
-        <Aside />
         <div className="main-content">
           <h2>Content</h2>
           <div className="user-post">
@@ -70,6 +66,21 @@ export class Main extends Component {
             <button onClick={() => this.setState({ count: count + 1 })}>Inc</button>
             <Mount inc={count} />
           </div>
+          <Numbers
+            from={2}
+            to={19}
+            even
+          />
+          <UserList list={users} name="name" lastName="lastName" age="age" /> 
+          <Tabs>
+            <Tab tittle="One">
+              <h2>Hey</h2>
+            </Tab>
+
+            <Tab tittle="Two">
+              <h2>Hi</h2>
+            </Tab>  
+          </Tabs>
         </div>
       </main>
     );
