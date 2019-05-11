@@ -7,6 +7,7 @@ import { ToggleContent } from '../button/ToggleButton';
 import { TaskList } from '../task/Task';
 import { Form } from '../form/Form';
 import {Tabs, Tab} from '../tabs';
+// import img from './node.png';
 import './main.scss';
 
 const tabs = [
@@ -28,7 +29,6 @@ export class Main extends Component {
   render() {
     return (
       <main className="main">
-        <Aside />
         <div className="main-content">
           <h2>Content</h2>
           <Numbers
