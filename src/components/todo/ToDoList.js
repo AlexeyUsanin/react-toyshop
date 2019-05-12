@@ -6,8 +6,7 @@ export class ToDoList extends Component {
     filterVal: ''
   }
 
-  constructor(props) {
-    super(props);
+  componentDidMount() {
     this.getToDo();
   }
 

@@ -1,19 +1,11 @@
 import React from 'react';
 import { Numbers } from '../numbers';
-import { UserList, PostList } from '../users';
 import { TaskList } from '../task';
-import { Form } from '../form';
-import { Tabs, Tab } from '../tabs';
 import { Input } from '../editableInput';
 import { ToDoList } from '../todo';
 import { Categories } from '../categories';
 import './main.scss';
 
-const tabs = [
-  { id: 0, title: 'Tab 1', content: 'Some text is here' },
-  { id: 1, title: 'Tab 2', content: 'Another content' },
-  { id: 2, title: 'Tab 1', content: 'Third text' }
-];
 
 const Aside = () => (
   <aside className="aside">
@@ -53,7 +45,7 @@ export class Main extends Component {
 
     return (
       <main className="main">
-        <Input prop={fn} />
+        <Input prop={fn} placeholder='Enter some text'/>
         <div className="main-content">
           <ToDoList />
           <Categories

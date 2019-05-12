@@ -1,10 +1,6 @@
 import './categories.scss';
 
 export class Categories extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const {
       name, categories, publish, products

@@ -9,7 +9,6 @@ export const TabNav = ({ list, select }) => {
   return (
     <nav className="nav-tab">
       <ul>
-        {' '}
         {list.map((title, index) => (
           <li key={index}>
             <a
