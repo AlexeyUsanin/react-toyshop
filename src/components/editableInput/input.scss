@@ -1,12 +1,14 @@
 .editable-input {
   display: flex;
+
   span,
   input {
     width: 200px;
-    background: #e7e7e7;
+    background: #999;
     text-align: left;
     padding: 10px;
     font-size: 18px;
+    margin: 20px;
   }
 
   input {

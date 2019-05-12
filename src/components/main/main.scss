@@ -3,7 +3,6 @@
   background-color: $main_color;
   border: $global_border;
   margin: 20px 0;
-  display: flex;
   text-align: center;
 }
 
@@ -53,11 +52,11 @@
 }
 
 .main-content {
-  width: 100%;
   background-color: $second_color;
-  margin: 80px 20px 40px;
+  margin: 40px 20px;
   border: 1px solid #000;
   padding: 10px;
+  display: flex;
 
   .user-post {
     display: flex;

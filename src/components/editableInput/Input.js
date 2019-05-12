@@ -36,7 +36,7 @@ export class Input extends Component {
               onBlur={this.handleBlur}
               onChange={this.handleChange}
               value={value}
-              autoFocus
+              autoFocus={true}
             />
           )
         }

@@ -4,9 +4,9 @@ import { UserList, PostList } from '../users';
 import { TaskList } from '../task';
 import { Form } from '../form';
 import { Tabs, Tab } from '../tabs';
-// import img from './node.png';
 import { Input } from '../editableInput';
 import { ToDoList } from '../todo';
+import { Categories } from '../categories';
 import './main.scss';
 
 const tabs = [
@@ -53,10 +53,15 @@ export class Main extends Component {
 
     return (
       <main className="main">
+        <Input prop={fn} />
         <div className="main-content">
-          <h2>Content</h2>
-          <Input prop={fn} />
           <ToDoList />
+          <Categories
+            name="John"
+            categories={50}
+            publish={4}
+            products={14}
+          />
         </div>
       </main>
     );

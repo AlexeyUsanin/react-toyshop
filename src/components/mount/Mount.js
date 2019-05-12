@@ -10,7 +10,7 @@ export class Mount extends Component {
 
   componentDidUpdate(prevProps) {
     const { inc } = this.props;
-
+    
     if (inc !== prevProps.inc) {
       if (inc % 3 === 0) {
         this.setState({ color: 'green' });
