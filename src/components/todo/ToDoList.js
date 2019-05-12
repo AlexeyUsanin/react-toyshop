@@ -2,7 +2,8 @@ import './todo.scss';
 
 export class ToDoList extends Component {
   state = {
-    todos: []
+    todos: [],
+    filterVal: ''
   }
   
   constructor(props) {
@@ -10,20 +11,33 @@ export class ToDoList extends Component {
     this.getToDo();
   }
 
-
   getToDo() {
     fetch('https://jsonplaceholder.typicode.com/todos')
       .then(response => response.json())
       .then(response => response.slice(0, 15))
-      .then(todos => this.setState({ todos }));
+      .then(todos => {
+        this.originTodos = todos; 
+        this.setState({ todos: this.originTodos });
+      });
+  }
+
+  setFilter = ({target}) => {
+    this.setState({ filterVal: target.value });
+    this.setState({ todos: this.originTodos.filter(todo => todo.title.includes(target.value)) })
   }
 
   render() {
-    const {todos} = this.state;
+    const {todos, filterVal} = this.state;
 
     return (
       <div className="to-do-list">
         <p className="title">To Do List</p>
+        <input 
+          type='text'
+          value={filterVal}  
+          onChange={this.setFilter}
+          placeholder={'Filter list...'}
+        />
         <ul>
           {
             todos.map(({title, id, completed}) => (<li 
