@@ -14,8 +14,7 @@ export class Timer extends Component {
   }
 
   timeUpdate() {
-    this.timer = setInterval(() => 
-    this.setState({ date: new Date() }), 1000);
+    this.timer = setInterval(() => this.setState({ date: new Date() }), 1000);
   }
 
   render() {

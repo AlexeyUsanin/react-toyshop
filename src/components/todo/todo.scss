@@ -1,0 +1,30 @@
+.to-do-list {
+  padding: 20px;
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    b {
+      margin-right: 10px;
+    }
+
+    span {
+      font-weight: 700;
+      font-size: 20px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .title {
+    font-size: 28px;
+    text-align: left;
+  }
+
+  .completed {
+    text-decoration: line-through;
+    color: #666;
+  }
+}

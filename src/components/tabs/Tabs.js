@@ -1,4 +1,4 @@
-import {TabNav} from './TabNav';
+import { TabNav } from './TabNav';
 
 export const Tab = () => null;
 
@@ -8,12 +8,12 @@ export class Tabs extends Component {
   }
 
   changeTab = (selectIndex) => {
-    this.setState({selectIndex})
+    this.setState({ selectIndex });
   }
 
   render() {
-    const { selectIndex} = this.state;
-    const {children} = this.props;
+    const { selectIndex } = this.state;
+    const { children } = this.props;
 
     const tabs = this.props.children.filter(child => child.type === Tab);
     const currentTab = tabs[selectIndex] && tabs[selectIndex].props.children;
@@ -22,7 +22,7 @@ export class Tabs extends Component {
 
     return (
       <div>
-        <TabNav 
+        <TabNav
           list={titles}
           select={this.changeTab}
           activeIndex={selectIndex}
@@ -32,6 +32,6 @@ export class Tabs extends Component {
           {currentTab}
         </div>
       </div>
-    )
+    );
   }
 }
