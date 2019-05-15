@@ -1,0 +1,15 @@
+@import '../../variables.scss';
+
+.categories-info {
+  width: 250px;
+  height: 250px;
+  text-align: left;
+  padding: 20px;
+  font-size: 22px;
+  border: $global_border;
+  background-color: $main_color;
+
+  strong {
+    margin: 0 5px;
+  }
+}

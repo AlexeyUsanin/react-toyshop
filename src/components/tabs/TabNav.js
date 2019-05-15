@@ -5,17 +5,21 @@ export const TabNav = ({ list, select }) => {
     select(index);
     e.preventDefault();
   };
- 
+
   return (
     <nav className="nav-tab">
-      <ul> {list.map((title, index) =>
-          (<li key={index}>
-            <a href="#"
-                onClick={e => onClick(e, index)}>
+      <ul>
+        {list.map((title, index) => (
+          <li key={index}>
+            <a
+              href="#"
+              onClick={e => onClick(e, index)}
+            >
               {title}
             </a>
-          </li>)
-        )}
+          </li>
+        ))}
       </ul>
-    </nav> );
+    </nav>
+  );
 };
