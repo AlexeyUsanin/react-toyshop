@@ -24,16 +24,16 @@ export class TaskList extends Component {
     return (
       <div>
         <div className="title">
-Hello
+          Hello
           {name && `, ${name}`}
-!
+           !
         </div>
         <ul className="task-list">
           <li>
-You have
+          You have
             <strong>{all}</strong>
             {' '}
-tasks
+           tasks
           </li>
           <li>
 Done:
