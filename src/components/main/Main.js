@@ -40,12 +40,10 @@ export class Main extends Component {
   }
 
   render() {
-    const { users, posts, todos } = this.state;
-    const fn = text => console.log(text);
 
     return (
       <main className="main">
-        <Input prop={fn} placeholder='Enter some text'/>
+        <Input prop={console.log} placeholder='Enter some text'/>
         <div className="main-content">
           <ToDoList />
           <Categories
