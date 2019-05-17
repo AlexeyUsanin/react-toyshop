@@ -15,9 +15,10 @@ export class Input extends Component {
   }
 
   handleBlur = () => {
-    this.setState({ 
+    this.setState({
       hidden: true,
-      value: event.target.value });
+      value: event.target.value
+    });
     this.props.prop(event.target.value);
   }
 
@@ -34,7 +35,7 @@ export class Input extends Component {
               onBlur={this.handleBlur}
               onChange={this.handleChange}
               value={value}
-              autoFocus={true}
+              autoFocus
               placeholder={placeholder}
             />
           )

@@ -1,4 +1,4 @@
-const path= require('path');
+const path = require('path');
 const HTMLPlugin = require('html-webpack-plugin');
 const CssPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
@@ -44,13 +44,13 @@ module.exports = {
 
     module: {
       rules: [
-        {
-          enforce: 'pre',
-          test: /\.js$/,
-          exclude: /node_modules/,
-          loader: 'eslint-loader',
-          options: { emitWarning: true}
-        },
+        // {
+        //   enforce: 'pre',
+        //   test: /\.js$/,
+        //   exclude: /node_modules/,
+        //   loader: 'eslint-loader',
+        //   options: { emitWarning: true}
+        // },
          
         {
           test: /\.js$/,
@@ -87,9 +87,10 @@ module.exports = {
 
 
     devServer: {
-        publicPath: '/',
-        port: 9000,
-        hot: true,
-        historyApiFallback: true
+      contentBase: path.resolve(__dirname, 'prod'),
+      publicPath: '/',
+      port: 9000,
+      hot: true,
+      historyApiFallback: true
     }
 };

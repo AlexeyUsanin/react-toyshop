@@ -1,20 +1,9 @@
 import React from 'react';
-import { Numbers } from '../../components/numbers/Numbers';
-import { UserList, users } from '../../components/users/Users';
-import { Counter } from '../../components/counter/Counter';
-import { Button } from '../../components/button/Button';
-import { ToggleContent } from '../../components/button/ToggleButton';
-import { TaskList } from '../task/Task';
-import { Form } from '../../components/form/Form';
-import {Tabs, Tab} from '../../components/tabs';
-
+import { Tabs, Tab } from '../../components/tabs';
+import { UserList, users } from '../../components/users';
+import { Gallery } from '../../components/gallery';
 import './main.scss';
 
-const tabs = [
-  {id: 0, title: 'Tab 1', content: 'Some text is here'},
-  {id: 1, title: 'Tab 2', content: 'Another content'},
-  {id: 2, title: 'Tab 1', content: 'Third text'}
-];
 
 export class Main extends Component {
   constructor(props) {
@@ -45,6 +34,15 @@ export class Main extends Component {
     return (
       <main className="main">
         <div className="main-content">
+          <Tabs selectedIndex={1}>
+            <Tab title="Show user list">
+              <UserList list={users} />
+            </Tab>
+
+            <Tab title="Show gallery">
+              <Gallery />
+            </Tab>
+          </Tabs>
         </div>
       </main>
     );
