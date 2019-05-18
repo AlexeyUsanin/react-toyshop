@@ -24,20 +24,19 @@ export class Main extends Component {
       posts: [],
       count: 0
     };
-    this.getUsers();
   }
 
-  getUsers() {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(users => this.setState({ users }));
-  }
+  // getUsers() {
+  //   fetch('https://jsonplaceholder.typicode.com/users')
+  //     .then(response => response.json())
+  //     .then(users => this.setState({ users }));
+  // }
 
-  getPost = (id) => {
-    fetch(`https://jsonplaceholder.typicode.com/posts?userId=${id}`)
-      .then(resp => resp.json())
-      .then(posts => this.setState({ posts }));
-  }
+  // getPost = (id) => {
+  //   fetch(`https://jsonplaceholder.typicode.com/posts?userId=${id}`)
+  //     .then(resp => resp.json())
+  //     .then(posts => this.setState({ posts }));
+  // }
 
   render() {
     const { users, posts, count } = this.state;

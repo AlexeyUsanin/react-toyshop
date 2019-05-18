@@ -4,6 +4,7 @@ import { Main } from './pages/main/Main';
 import { Footer } from './components/footer/Footer';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Pages } from './pages';
+import { checkUserService } from './services/userService';
 
 import './app.scss';
 
@@ -13,16 +14,34 @@ class App extends Component {
     user: null
   }
 
+  // componentDidMount() {
+  //   this.chekUser();
+  // }
+
+  componentDidUpdate(prevStates) {
+    const {user} = this.state;
+
+    if (prevStates.user && !user) {
+      this.props.history().push('/');
+    }
+  }
+
   onLogin = (user) => {
-    this.setState({user})
+    this.setState({user});
+  }
+
+  chekUser() {
+    checkUserService()
+      .then(user => this.onLogin(user))
+      .catch(err => console.log(err));
   }
 
   render() {
-    const {user} =this.state;
+    const {user} = this.state;
     
     return (
       <>
-        <Header />
+        <Header user={user}/>
           <Pages onLogin={this.onLogin} user={user}/>
         <Footer />
       </>

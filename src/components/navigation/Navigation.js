@@ -14,9 +14,5 @@ export const Navigation = ({user}) => (
     <Nav
       list={['Home', 'Products', 'Contacts']}
     />
-    {
-      user ? <Link to="/signout">Sign Out</Link> :
-      <Link to="/login">Login</Link>
-    }
   </nav>
 );
