@@ -2,26 +2,29 @@
   display: flex;
 
   span,
-  input {
-    width: 200px;
+  input,
+  textarea {
     background: #999;
     text-align: left;
-    padding: 10px;
-    font-size: 18px;
-    margin: 20px;
+    padding: 5px;
+    font-size: 26px;
+    margin-left: 10px;
+    width: 200px;
   }
 
   input {
     height: 20px;
-
+    
     &:focus {
       background-color: #eee;
       border: 1px solid blue;
     }
   }
-
+  
   span {
-    height: 20px;
     cursor: pointer;
+    border-bottom: 1px solid;
+    height: 31px;
+    padding: 0;
   }
 }

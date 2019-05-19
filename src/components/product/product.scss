@@ -1,0 +1,43 @@
+.product-info {
+  text-align: left;
+  padding: 20px;
+  border: 1px solid;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
+    .title {
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    &.textarea {
+      flex-direction: column;
+      align-items: flex-start;
+
+      span,
+      textarea {
+        min-height: 40px;
+        height: auto;
+        margin-left: 0;
+        max-width: 400px;
+        width: 400px;
+      }
+
+      textarea {
+        height: 200px;
+      }
+    }
+  }
+
+  .save-btn {
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: transparent;
+    border: 1px solid;
+    margin-top: 30px;
+  }
+}

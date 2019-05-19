@@ -2,6 +2,8 @@ import React from 'react';
 import { Tabs, Tab } from '../../components/tabs';
 import { UserList, users } from '../../components/users';
 import { Gallery } from '../../components/gallery';
+import { TabTask } from '../../components/taskList';
+import { Product } from '../../components/product';
 import './main.scss';
 
 
@@ -10,10 +12,10 @@ export class Main extends Component {
     super(props);
     this.state = {
       users: [],
-      posts: [],
-      count: 0
+      index: 0
     };
     this.getUsers();
+    this.changeTab();
   }
 
   getUsers() {
@@ -22,27 +24,28 @@ export class Main extends Component {
       .then(users => this.setState({ users }));
   }
 
-  getPost = (id) => {
-    fetch(`https://jsonplaceholder.typicode.com/posts?userId=${id}`)
-      .then(resp => resp.json())
-      .then(posts => this.setState({ posts }));
+  changeTab() {
+    setTimeout(() => {
+      this.setState({ index: 1});
+    }, 3000);
   }
 
   render() {
-    const { users, posts, count } = this.state;
+    const { users, index } = this.state;
 
     return (
       <main className="main">
         <div className="main-content">
-          <Tabs selectedIndex={1}>
+          <Tabs selectedIndex={index}>
             <Tab title="Show user list">
               <UserList list={users} />
             </Tab>
-
             <Tab title="Show gallery">
               <Gallery />
             </Tab>
           </Tabs>
+          <TabTask />
+          <Product />
         </div>
       </main>
     );

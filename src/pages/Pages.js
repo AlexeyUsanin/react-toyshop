@@ -25,9 +25,9 @@ export const Pages = ({ onLogin, user }) => (
         <Route
           render={({ location }) => (
             <h1>
-Woh, man! Page
+              Woh, man! Page
               <b>{location.pathname}</b>
-not found
+              not found
             </h1>
           )}
         />
