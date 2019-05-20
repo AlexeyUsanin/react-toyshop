@@ -2,7 +2,7 @@ import React from 'react';
 import { Tabs, Tab } from '../../components/tabs';
 import { UserList, users } from '../../components/users';
 import { Gallery } from '../../components/gallery';
-import { TabTask } from '../../components/taskList';
+import { TabTask, tasks } from '../../components/taskList';
 import { Product } from '../../components/product';
 import './main.scss';
 
@@ -44,7 +44,7 @@ export class Main extends Component {
               <Gallery />
             </Tab>
           </Tabs>
-          <TabTask />
+          <TabTask list={tasks}/>
           <Product />
         </div>
       </main>

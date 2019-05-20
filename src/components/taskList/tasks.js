@@ -1,3 +1,4 @@
+export const days = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
 export const tasks = [  
   [  
      {  
@@ -119,4 +120,4 @@ export const tasks = [
         "done":false
      }
   ]
-]
+];

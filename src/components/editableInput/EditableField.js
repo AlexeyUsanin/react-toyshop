@@ -19,6 +19,7 @@ export class EditableField extends Component {
       hidden: true,
       value: event.target.value
     });
+    this.props.prop(event.target.value);
   }
 
   render() {

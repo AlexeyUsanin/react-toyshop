@@ -1,3 +1,2 @@
-export * from './TaskList';
-export * from './NavTaskList';
+export * from './TabTask';
 export * from './tasks';

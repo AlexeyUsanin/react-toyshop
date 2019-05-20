@@ -20,7 +20,6 @@ export class Tabs extends Component {
   
   render() {
     const { selectIndex } = this.state;
-
     const tabs = this.props.children.filter(child => child.type === Tab);
 
     const titles = tabs.map(el => el.props.title);
