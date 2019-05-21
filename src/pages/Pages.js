@@ -3,6 +3,8 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import { TaskList } from './task';
 import { Main } from './main';
 import { Login } from './login';
+import { Categories } from './categories';
+
 
 export const Pages = ({ onLogin, user }) => (
   user
@@ -62,3 +64,4 @@ export const Pages = ({ onLogin, user }) => (
       </Switch>
     )
 );
+
