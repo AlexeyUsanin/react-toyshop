@@ -1,9 +1,10 @@
-export const Login = ({ onLogin }) => {
+import { loginUserService } from '../../services/userService';
+export const Login = ({onLogin}) => {
   const onSubmit = (e) => {
     e.preventDefault();
     const data = {
       email: e.target.email.value,
-      passwowrd: e.target.password.value
+      password: e.target.password.value
     };
 
     setTimeout(() => {
@@ -13,7 +14,7 @@ export const Login = ({ onLogin }) => {
     fetch('http://localhost:8086/public/login', {
       method: 'POST',
       credentials: 'include',
-      headers:{
+      headers: {
         'Content-type': 'application/json; charset=utf-8'
       },
       body: JSON.stringify(data)

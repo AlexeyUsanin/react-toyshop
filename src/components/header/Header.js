@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Navigation } from '../navigation/Navigation';
 import './header.scss';
 
-export const Header = () => (
+export const Header = ({user}) => (
   <header className="header">
-    <h1>Header</h1>
     <Navigation />
-    <h2>Navigation</h2>
+    {
+      user ? <Link to="/signout">Sign Out</Link> : 
+      <Link to="/login">Login</Link> 
+    }
   </header>
 );
