@@ -1,9 +1,7 @@
 @import '../../variables.scss';
 .main {
-  background-color: $main_color;
-  border: $global_border;
-  margin: 20px 0;
-  text-align: center;
+  max-width: 1400px;
+  margin: 0 auto; 
 }
 
 .aside {

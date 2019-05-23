@@ -1,16 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
-
 import { Link } from 'react-router-dom';
 import { Navigation } from '../navigation/Navigation';
 import './header.scss';
 
-export const HeaderComponent = ({user}) => (
+export const Header = ({user}) => (
   <header className="header">
     <Navigation />
     {
-      user ? <Link to="/signout">Sign Out</Link> : 
-      <Link to="/login">Login</Link> 
+      user ? <Link to="/signout">Sign Out</Link> :
+      <Link to="/login">Login</Link>
     }
   </header>
 );

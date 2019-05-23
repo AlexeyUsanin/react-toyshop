@@ -6,6 +6,7 @@ import { Main } from './main';
 import { Login } from './login';
 import { Categories } from './categories';
 import { NotFound } from './notFound';
+import { Welcome } from './welcomePage';
 
 export const Pages = ({onLogin, user}) => {
   return (
@@ -14,7 +15,7 @@ export const Pages = ({onLogin, user}) => {
       <Route 
         path="/"
         exact
-        component={Main}
+        component={Categories}
       />
       <Route 
         path="/home"
@@ -46,7 +47,7 @@ export const Pages = ({onLogin, user}) => {
       <Route 
         path="/"
         exact
-        component={Main}
+        component={Welcome}
       />
       <Route 
         path="/home"

@@ -7,6 +7,29 @@ import { store } from './store';
 
 import './app.scss';
 
+class App extends Component {
+  state = {
+    user: null
+  }
+  
+  onLogin = (user) => {
+    this.setState({user});
+  }
+
+  render() {
+    const {user} = this.state;
+    
+    return (
+      <>
+        <Header user={user}/>
+          <Main>
+            <Pages onLogin={this.onLogin} user={user}/>
+          </Main>
+        <Footer />
+      </>
+    )
+  }
+};
 
 const Root = (
   <Provider store={store}>
