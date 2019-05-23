@@ -7,6 +7,10 @@ export const Login = ({onLogin}) => {
       password: e.target.password.value
     };
 
+    setTimeout(() => {
+      onLogin(data);
+    }, 2000);
+
     fetch('http://localhost:8086/public/login', {
       method: 'POST',
       credentials: 'include',
@@ -28,5 +32,4 @@ export const Login = ({onLogin}) => {
       <input type="submit" value="login"/><br/>
     </form>
   );
-
 };

@@ -1,8 +1,8 @@
 import ReactDom from 'react-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Header } from './components/header/Header';
 import { Main } from './pages/main/Main';
 import { Footer } from './components/footer/Footer';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Pages } from './pages';
 import { checkUserService } from './services/userService';
 
@@ -37,23 +37,23 @@ class App extends Component {
   }
 
   render() {
-    const {user} = this.state;
-    
+    const { user } = this.state;
+
     return (
       <>
         <Header user={user}/>
           <Pages onLogin={this.onLogin} user={user}/>
         <Footer />
       </>
-    )
+    );
   }
-};
+}
 
 const Root = (
   <Router>
     <App />
   </Router>
-)
+);
 
 ReactDom.render(Root, document.getElementById('app'));
 

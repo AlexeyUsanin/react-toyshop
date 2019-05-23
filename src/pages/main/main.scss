@@ -57,14 +57,14 @@
   border: 1px solid #000;
   padding: 10px;
   display: flex;
+  justify-content: space-between;
 
   .user-post {
     display: flex;
   }
 
   .user-list {
-    width: 25%;
-
+    list-style-type: decimal;
     li {
       cursor: pointer;
 

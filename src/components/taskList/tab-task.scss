@@ -1,10 +1,19 @@
 .to-do-list {
   padding: 20px;
   text-align: left;
-  width: 40%;
+  background-color: #eee;
+  text-decoration: none;
+  border: 1px solid #000;
+  font-size: 18px;
 
   ul {
-    padding: 0;
+    padding: 10px;
+    list-style-type: decimal;
+  }
+
+  .add-task {
+    font-size: 16px;
+    font-weight: 600;
   }
 
   li {
