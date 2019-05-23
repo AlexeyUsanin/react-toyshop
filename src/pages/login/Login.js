@@ -5,19 +5,30 @@ export const Login = ({ onLogin }) => {
       email: e.target.email.value,
       passwowrd: e.target.password.value
     };
+
     setTimeout(() => {
       onLogin(data);
     }, 2000);
+
+    fetch('http://localhost:8086/public/login', {
+      method: 'POST',
+      credentials: 'include',
+      headers:{
+        'Content-type': 'application/json; charset=utf-8'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(resp => resp.json())
+      .then(user => {
+        onLogin(user);
+      });
   };
 
   return (
     <form action="#" onSubmit={onSubmit}>
-      <input required type="text" name="email" defaultValue="user@mail.com" />
-      <br />
-      <input required type="password" name="password" defaultValue="password" />
-      <br />
-      <input type="submit" value="login" />
-      <br />
+      <input required type="text" name="email" defaultValue="admin@a.com"/><br/>
+      <input required type="password" name="password" defaultValue="admin"/><br/>
+      <input type="submit" value="login"/><br/>
     </form>
   );
 };

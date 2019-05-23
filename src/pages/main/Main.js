@@ -30,6 +30,7 @@ export class Main extends Component {
     }, 3000);
   }
 
+
   render() {
     const { users, index } = this.state;
 
