@@ -12,7 +12,7 @@ export class Product extends Component {
           name="Toy"
           placeholder="Enter name"
           type="text"
-          prop={console.log}
+          callback={console.log}
         />
       </div>
       <div className="wrapper">
