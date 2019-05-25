@@ -27,11 +27,6 @@ export const Login = ({onLogin}) => {
         setLoader(true);
         onLogin(user);
       });
-
-    setTimeout(() => {
-      onLogin(data);
-      setLoader(true);
-    }, 2000);
   };
 
   return (

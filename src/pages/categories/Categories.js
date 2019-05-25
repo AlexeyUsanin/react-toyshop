@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './categories.scss';
 
 export class Categories extends Component {
@@ -31,16 +32,17 @@ export class Categories extends Component {
         <p>
           You have
           <strong>{info.categories}</strong>
-          categories (
-          <strong>{info.publish}</strong>
-          published)
+          categories {info.publish && `(
+          <strong>${info.publish}</strong>
+          published)`}
         </p>
         <p>
           You have
           <strong>{info.products}</strong>
           products
         </p>
-        <a href="/categories">Go to categories</a>
+        <Link to="/categories">Go to categories</Link>
+    
       </div>
     );
   }

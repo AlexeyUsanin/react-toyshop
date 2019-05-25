@@ -12,7 +12,7 @@ export const Nav = props => (
 export const Navigation = () => (
   <nav className="nav">
     <Nav
-      list={['Home', 'Products', 'Contacts']}
+      list={['Home', 'Shop', 'Contacts']}
     />
   </nav>
 );
