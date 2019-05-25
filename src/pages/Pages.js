@@ -1,4 +1,5 @@
 import { Route, Switch, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import { TaskList } from './task';
 import { Main } from './main';
@@ -6,7 +7,7 @@ import { Login } from './login';
 import { Categories } from './categories';
 
 
-export const Pages = ({ onLogin, user }) => (
+export const PagesComp = ({ onLogin, user }) => (
   user
     ? (
       <Switch>
@@ -65,3 +66,6 @@ export const Pages = ({ onLogin, user }) => (
     )
 );
 
+const mapState = (state) => ({user: state.user});
+
+export const Pages = connect(mapState)(PagesComp)

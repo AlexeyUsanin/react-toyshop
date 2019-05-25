@@ -1,5 +1,8 @@
+import { connect } from 'react-redux';
+import { setUser } from '../../store';
 import { loginUserService } from '../../services/userService';
-export const Login = ({onLogin}) => {
+
+export const LoginComp = ({dispatch}) => {
   const onSubmit = (e) => {
     e.preventDefault();
     const data = {
@@ -21,7 +24,7 @@ export const Login = ({onLogin}) => {
     })
       .then(resp => resp.json())
       .then(user => {
-        onLogin(user);
+        dispatch(setUser(user));
       });
   };
 
@@ -33,3 +36,6 @@ export const Login = ({onLogin}) => {
     </form>
   );
 };
+
+
+export const Login = connect()(LoginComp);

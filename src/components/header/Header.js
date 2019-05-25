@@ -1,9 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import { Link } from 'react-router-dom';
 import { Navigation } from '../navigation/Navigation';
 import './header.scss';
 
-export const Header = ({user}) => (
+export const HeaderComponent = ({user}) => (
   <header className="header">
     <Navigation />
     {
@@ -12,3 +14,9 @@ export const Header = ({user}) => (
     }
   </header>
 );
+
+const mapToProps = state => ({
+  user: state.user
+})
+
+export const Header = connect(mapToProps)(HeaderComponent);

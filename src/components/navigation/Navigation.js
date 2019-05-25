@@ -9,14 +9,10 @@ export const Nav = props => (
   </ul>
 );
 
-export const Navigation = ({ user }) => (
+export const Navigation = () => (
   <nav className="nav">
     <Nav
       list={['Home', 'Products', 'Contacts']}
     />
-    {
-      user ? <Link to="/signout">Sign Out</Link>
-        : <Link to="/login">Login</Link>
-    }
   </nav>
 );
