@@ -9,10 +9,10 @@ export const Nav = props => (
   </ul>
 );
 
-export const Navigation = () => (
+export const Navigation = ({user}) => (
   <nav className="nav">
-    <Nav
-      list={['Home', 'Shop', 'Contacts']}
-    />
+    {user ? <Nav
+      list={['Home', 'Categories', 'Product', 'Contacts']}
+    /> : <Nav list={['Home', 'Shop', 'Contacts']} />}
   </nav>
 );

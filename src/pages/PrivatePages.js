@@ -1,6 +1,7 @@
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { Main } from './main';
 import { Categories } from './categories';
+import { Products, Product } from '../components/product';
 
 
 export const PrivatePages = [
@@ -13,14 +14,20 @@ export const PrivatePages = [
 
   <Route 
     path="/home"
-    component={Main}
+    component={Categories}
     key='main'
+  />,
+
+  <Route 
+    path="/Products/:id"
+    component={Product}
+    key='products'
   />,
   
   <Route
-    path="/categories"
-    component={Categories}
-    key='categories'
+    path="/product"
+    component={Products}
+    key='products'
   />,
 
   <Redirect

@@ -17,24 +17,21 @@ export class Categories extends Component {
   }
 
   render() {
-    const {
-      name, categories, publish, products
-    } = this.props;
     const { info } = this.state;
 
 
     return (
       <div className="categories-info">
         <p>
-          Hello,
+          Hello
           <strong>{info.name}</strong>
         </p>
         <p>
           You have
           <strong>{info.categories}</strong>
-          categories {info.publish && `(
-          <strong>${info.publish}</strong>
-          published)`}
+          categories (
+          <strong>{info.publishedCategories}</strong>
+          published)
         </p>
         <p>
           You have

@@ -1,9 +1,10 @@
 import ReactDom from 'react-dom';
-import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-
-import { App } from './appComponent';
-import { store } from './store';
+import { Header } from './components/header/Header';
+import { Main } from './pages/main/Main';
+import { Footer } from './components/footer/Footer';
+import { Pages } from './pages';
+import { checkUserService } from './services/userService';
 
 import './app.scss';
 
@@ -11,9 +12,27 @@ class App extends Component {
   state = {
     user: null
   }
+
+  componentDidMount() {
+    this.chekUser();
+  }
   
+  componentDidUpdate(prevStates) {
+    const {user} = this.state;
+
+    if (prevStates.user && !user) {
+      this.props.history().push('/');
+    }
+  }
+
   onLogin = (user) => {
     this.setState({user});
+  }
+
+  chekUser() {
+    checkUserService()
+      .then(user => this.onLogin(user))
+      .catch(err => console.log(err));
   }
 
   render() {
@@ -22,9 +41,7 @@ class App extends Component {
     return (
       <>
         <Header user={user}/>
-          <Main>
-            <Pages onLogin={this.onLogin} user={user}/>
-          </Main>
+          <Pages onLogin={this.onLogin} user={user}/>
         <Footer />
       </>
     )
@@ -32,11 +49,9 @@ class App extends Component {
 };
 
 const Root = (
-  <Provider store={store}>
-    <Router>
-      <App />
-    </Router>
-  </Provider>
+  <Router>
+    <App />
+  </Router>
 );
 
 ReactDom.render(Root, document.getElementById('app'));

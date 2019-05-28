@@ -4,18 +4,17 @@ import { Categories } from './categories';
 import { Welcome } from './welcomePage';
 
 export const PublicPages = [
-  <Route 
-    path="/"
-    exact
-    component={Welcome}
-    key='home'
-  />, 
+    <Route 
+      path="/"
+      exact
+      component={Welcome}
+      key='home'
+    />, 
 
-  <Route 
-    path="/home"
-    exact
-    component={Main}
-    key='main'
-  />
-  
-];
+    <Route 
+      path="/home"
+      exact
+      component={Welcome}
+      key='main'
+    />
+]

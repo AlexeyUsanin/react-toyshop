@@ -5,16 +5,10 @@ import './header.scss';
 
 export const Header = ({user}) => (
   <header className="header">
-    <Navigation />
+    <Navigation user={user}/>
     {
       user ? <Link to="/signout">Sign Out</Link> :
       <Link to="/login">Login</Link>
     }
   </header>
 );
-
-const mapToProps = state => ({
-  user: state.user
-})
-
-export const Header = connect(mapToProps)(HeaderComponent);

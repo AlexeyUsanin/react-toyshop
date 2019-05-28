@@ -3,7 +3,7 @@ import './input.scss';
 export class EditableField extends Component {
   state = {
     hidden: true,
-    value: this.props.name || ''
+    value: this.props.name
   };
 
   toggleInput = () => {
@@ -19,18 +19,19 @@ export class EditableField extends Component {
       hidden: true,
       value: event.target.value
     });
-    this.props.callback(event.target.value);
+
+    this.props.callback ? this.props.callback(event.target.value) : null;
   }
 
   render() {
     const { hidden, value } = this.state;
-    const { placeholder, type, input } = this.props;
+    const { placeholder, type, input, name } = this.props;
 
     return (
       <div className="editable-input">
         {
           input ? 
-          (hidden ? (<span onClick={this.toggleInput}>{value}</span>) : (
+          (hidden ? (<span onClick={this.toggleInput}>{name || placeholder}</span>) : (
             <input
               type={type === "text" ? "text" : "number"}
               onBlur={this.handleBlur}
@@ -39,7 +40,7 @@ export class EditableField extends Component {
               autoFocus
               placeholder={placeholder}
             />
-          )) : (hidden ? (<span onClick={this.toggleInput}>{value}</span>) : (
+          )) : (hidden ? (<span onClick={this.toggleInput}>{name || placeholder}</span>) : (
             <textarea
               onBlur={this.handleBlur}
               onChange={this.handleChange}

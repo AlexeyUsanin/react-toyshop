@@ -40,6 +40,3 @@ export const Login = ({onLogin}) => {
     </div>
   );
 };
-
-
-export const Login = connect()(LoginComp);
