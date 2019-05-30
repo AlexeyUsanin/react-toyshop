@@ -1,4 +1,5 @@
 import './categories.scss';
+import {getCategoryInfo} from '../../services/categoriesServise';
 
 export class Categories extends Component {
   state = {
@@ -6,14 +7,17 @@ export class Categories extends Component {
   };
 
   componentDidMount() {
-    fetch('http://localhost:8086/shop_info', {
-      credentials: 'include',
-    })
-      .then(r => r.json())
-      .then(info => {
+    this.getInfo();
+  }
+
+  getInfo() {
+    getCategoryInfo()
+      .then((info) => {
         this.setState({info});
       });
   }
+  
+
 
   render() {
     const {

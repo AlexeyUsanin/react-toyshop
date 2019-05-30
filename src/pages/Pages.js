@@ -19,7 +19,7 @@ export const PagesComp = ({ onLogin, user }) => (
         <Route
           path="/home"
           exact
-          component={Main}
+          component={Categories}
         />
         <Route
           path="/task"
@@ -46,7 +46,7 @@ export const PagesComp = ({ onLogin, user }) => (
         <Route
           path="/home"
           exact
-          component={Main}
+          component={Categories}
         />
         <Route
           path="/login"

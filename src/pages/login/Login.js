@@ -10,19 +10,7 @@ export const LoginComp = ({dispatch}) => {
       password: e.target.password.value
     };
 
-    setTimeout(() => {
-      onLogin(data);
-    }, 2000);
-
-    fetch('http://localhost:8086/public/login', {
-      method: 'POST',
-      credentials: 'include',
-      headers: {
-        'Content-type': 'application/json; charset=utf-8'
-      },
-      body: JSON.stringify(data)
-    })
-      .then(resp => resp.json())
+    loginUserService(data)
       .then(user => {
         dispatch(setUser(user));
       });
