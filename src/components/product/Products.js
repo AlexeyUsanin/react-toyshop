@@ -14,10 +14,10 @@ export class Products extends Component {
   }
 
   componentDidMount() {
-    this.getProduct();
+    this.getProducts();
   }
 
-  getProduct() {
+  getProducts() {
     fetch('http://localhost:8086/public/products', {
       credentials: 'include',
     })

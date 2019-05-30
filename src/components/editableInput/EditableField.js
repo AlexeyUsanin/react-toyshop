@@ -31,7 +31,7 @@ export class EditableField extends Component {
       <div className="editable-input">
         {
           input ? 
-          (hidden ? (<span onClick={this.toggleInput}>{name || placeholder}</span>) : (
+          (hidden ? (<span onClick={this.toggleInput}>{value}</span>) : (
             <input
               type={type === "text" ? "text" : "number"}
               onBlur={this.handleBlur}
@@ -40,7 +40,7 @@ export class EditableField extends Component {
               autoFocus
               placeholder={placeholder}
             />
-          )) : (hidden ? (<span onClick={this.toggleInput}>{name || placeholder}</span>) : (
+          )) : (hidden ? (<span onClick={this.toggleInput}>{value}</span>) : (
             <textarea
               onBlur={this.handleBlur}
               onChange={this.handleChange}

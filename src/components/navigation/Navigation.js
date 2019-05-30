@@ -11,8 +11,8 @@ export const Nav = props => (
 
 export const Navigation = ({user}) => (
   <nav className="nav">
-    {user ? <Nav
+    {user ? <><Nav
       list={['Home', 'Categories', 'Product', 'Contacts']}
-    /> : <Nav list={['Home', 'Shop', 'Contacts']} />}
+    /> <div>{user.email}</div></> : <Nav list={['Home', 'Shop', 'Contacts']} />}
   </nav>
 );

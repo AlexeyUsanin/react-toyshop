@@ -1,6 +1,4 @@
-import { Route, Switch, Redirect } from 'react-router-dom';
-import { Main } from './main';
-import { Categories } from './categories';
+import { Route } from 'react-router-dom';
 import { Welcome } from './welcomePage';
 
 export const PublicPages = [

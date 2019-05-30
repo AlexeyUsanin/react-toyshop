@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react';
 import { server } from '../../services';
 import { EditableField } from '../editableInput';
 import './product.scss';
 
-export class Product extends Component {
+export class Product extends Component {  
   state = {
-    product: null
+    product: {}
   }
 
   componentDidMount() {
@@ -14,41 +13,28 @@ export class Product extends Component {
 
   getProduct() {
     server.get(`public/products/${this.props.match.params.id}`)
-      .then((prod) => this.setState(prod));
+      .then(product => {
+        this.setState({product});
+      });
   }
 
   render() {
-    const { title, price, description} = this.state;
+  
+    const { product } = this.state;
 
     return (
-    <div className="container">
+      
+      <div className="container">
       <div className="product-info">
         <div className="wrapper">
-          <span className="title">Title: </span>
-          <EditableField 
-            input
-            name={title}
-            placeholder="Enter name"
-            type="text"
-          />
+          <span className="title">Title: {product.title}</span>
         </div>
         <div className="wrapper">
-          <span className="title">Price: $</span>
-          <EditableField
-            input
-            name={price}
-            placeholder="Enter price"
-            type="number"
-          />
+          <span className="title">Price: ${product.price}</span>
         </div>
         <div className="wrapper textarea">
           <span className="title">Description:</span>
-          <EditableField
-            textarea
-            name={description}
-            placeholder="Enter text"
-            type="text"
-          />
+          <p>{product.description}</p>
         </div>
         <input type="submit" value="Save" className="save-btn"/>
         </div>

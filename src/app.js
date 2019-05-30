@@ -12,10 +12,6 @@ class App extends Component {
   state = {
     user: null
   }
-
-  componentDidMount() {
-    this.chekUser();
-  }
   
   componentDidUpdate(prevStates) {
     const {user} = this.state;
@@ -29,6 +25,11 @@ class App extends Component {
     this.setState({user});
   }
 
+  onLogout = () => {
+    this.setState({ user: null });
+  }
+
+
   chekUser() {
     checkUserService()
       .then(user => this.onLogin(user))
@@ -40,7 +41,7 @@ class App extends Component {
     
     return (
       <>
-        <Header user={user}/>
+        <Header user={user} onLogout={this.onLogout} />
           <Pages onLogin={this.onLogin} user={user}/>
         <Footer />
       </>
