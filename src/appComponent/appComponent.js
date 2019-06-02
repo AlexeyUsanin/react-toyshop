@@ -10,9 +10,8 @@ import { setUser } from './store/user';
 
 
 export class AppComp extends Component {
-
   componentDidUpdate(prevStates) {
-    const {user} = this.state;
+    const { user } = this.state;
 
     if (prevStates.user && !user) {
       this.props.history().push('/');
@@ -25,25 +24,24 @@ export class AppComp extends Component {
 
   chekUser() {
     checkUserService()
-      .then(user => {
+      .then((user) => {
         this.props.dispatch(setUser(user));
       })
       .catch(err => console.log(err));
   }
 
-  
+
   render() {
     const { user } = this.props;
 
     return (
       <>
         <Header />
-          <Pages user={user}/>
+        <Pages user={user} />
         <Footer />
       </>
     );
   }
-
 }
 
 export const App = connect()(AppComp);

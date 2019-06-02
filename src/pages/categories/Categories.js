@@ -11,18 +11,21 @@ export class Categories extends Component {
       credentials: 'include',
     })
       .then(r => r.json())
-      .then(info => {
-        this.setState({info});
+      .then((info) => {
+        this.setState({ info });
       });
   }
 
   render() {
     const { info } = this.state;
+    const { user = {} } = this.props;
 
     return (
       <div className="container">
         <div className="categories-info">
-          <p>Hello
+          <p>
+            Hello,
+            <strong>{user.firstName}</strong>
           </p>
           <p>
             You have

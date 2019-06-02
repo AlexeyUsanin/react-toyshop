@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Loader } from "../../components/loader";
+import { Loader } from '../../components/loader';
 import './login.scss';
 
-export const Login = ({onLogin}) => {
+export const Login = ({ onLogin }) => {
   const [loading, setLoader] = useState(false);
 
   const onSubmit = (e) => {
@@ -11,7 +11,7 @@ export const Login = ({onLogin}) => {
       email: e.target.email.value,
       password: e.target.password.value
     };
-    
+
     setLoader(true);
 
     fetch('http://localhost:8086/public/login', {
@@ -23,7 +23,7 @@ export const Login = ({onLogin}) => {
       body: JSON.stringify(data)
     })
       .then(resp => resp.json())
-      .then(user => {
+      .then((user) => {
         setLoader(true);
         onLogin(user);
       });
@@ -32,9 +32,12 @@ export const Login = ({onLogin}) => {
   return (
     <div className="form-wrapper">
       <form action="#" onSubmit={onSubmit}>
-        <input required type="text" name="email" defaultValue="admin@a.com"/><br/>
-        <input required type="password" name="password" defaultValue="admin"/><br/>
-        <input type="submit" className="submit" value="login"/><br/>
+        <input required type="text" name="email" defaultValue="admin@a.com" />
+        <br />
+        <input required type="password" name="password" defaultValue="admin" />
+        <br />
+        <input type="submit" className="submit" value="login" />
+        <br />
         {loading && <Loader />}
       </form>
     </div>

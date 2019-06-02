@@ -6,4 +6,23 @@
   justify-content: space-around;
   align-items: center;
   height: 80px;
+
+  .logo {
+    max-width: 175px;
+    
+    img {
+      width: 100%;
+    }
+  }
+
+  a {
+
+    &:hover {
+      color: rgba(#ff574d, .5);
+    }
+
+    &.active {
+      color: #ff574d;
+    }
+  }
 }

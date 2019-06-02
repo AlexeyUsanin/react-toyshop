@@ -1,33 +1,19 @@
-import { Route, Switch, Redirect } from 'react-router-dom';
-import { Main } from './main';
-import { Categories } from './categories';
-import { Products, Product } from '../components/product';
+import { Route, Redirect } from 'react-router-dom';
+import { Products, Product } from './product';
 
 
 export const PrivatePages = [
-  <Route 
-    path="/"
-    exact
-    component={Categories}
-    key='home'
-  />,
 
-  <Route 
-    path="/home"
-    component={Categories}
-    key='main'
-  />,
-
-  <Route 
+  <Route
     path="/Products/:id"
     component={Product}
-    key='products'
+    key="product"
   />,
-  
+
   <Route
-    path="/product"
+    path="/products"
     component={Products}
-    key='products'
+    key="products"
   />,
 
   <Redirect
@@ -36,4 +22,4 @@ export const PrivatePages = [
     key="login"
   />
 
-]
+];

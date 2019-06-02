@@ -1,8 +1,7 @@
 import ReactDom from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Header } from './components/header/Header';
-import { Main } from './pages/main/Main';
-import { Footer } from './components/footer/Footer';
+import { Header } from './components/header';
+import { Main } from './pages/main';
 import { Pages } from './pages';
 import { checkUserService } from './services/userService';
 
@@ -12,9 +11,9 @@ class App extends Component {
   state = {
     user: null
   }
-  
+
   componentDidUpdate(prevStates) {
-    const {user} = this.state;
+    const { user } = this.state;
 
     if (prevStates.user && !user) {
       this.props.history().push('/');
@@ -22,7 +21,7 @@ class App extends Component {
   }
 
   onLogin = (user) => {
-    this.setState({user});
+    this.setState({ user });
   }
 
   onLogout = () => {
@@ -37,17 +36,18 @@ class App extends Component {
   }
 
   render() {
-    const {user} = this.state;
-    
+    const { user } = this.state;
+
     return (
       <>
         <Header user={user} onLogout={this.onLogout} />
-          <Pages onLogin={this.onLogin} user={user}/>
-        <Footer />
+        <Main>
+          <Pages onLogin={this.onLogin} user={user} />
+        </Main>
       </>
-    )
+    );
   }
-};
+}
 
 const Root = (
   <Router>

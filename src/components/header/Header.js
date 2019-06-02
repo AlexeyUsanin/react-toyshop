@@ -4,21 +4,20 @@ import { Navigation } from '../navigation/Navigation';
 import { server } from '../../services';
 import './header.scss';
 
-export const Header = ({user, onLogout}) => {
-
+export const Header = ({ user, onLogout }) => {
   const logoutHandler = (e) => {
     e.preventDefault();
     server.get('logout').then(() => onLogout(null));
   };
-  
+
   return (
     <header className="header">
-      
-      <Navigation user={user}/>
+      <Link to="/"><img src="/images/logo.png" alt="logo" className="logo" /></Link>
+      <Navigation user={user} />
       {
-        user ? <Link to="/" onClick={logoutHandler}>Sign Out</Link> :
-        <Link to="/login">Login</Link>
+        user ? <Link to="/" onClick={logoutHandler}>Sign Out</Link>
+          : <Link to="/login">Login</Link>
       }
     </header>
-  )
+  );
 };
