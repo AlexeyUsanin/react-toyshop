@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { connect } from 'react-redux';
 
 import { Header } from './components/header/Header';
@@ -10,6 +9,9 @@ import { setUser } from './store/user';
 
 
 export class AppComp extends Component {
+  state = {
+    user: null
+  }
 
   componentDidUpdate(prevStates) {
     const {user} = this.state;
@@ -19,9 +21,9 @@ export class AppComp extends Component {
     }
   }
 
-  // onLogin = (user) => {
-  //   this.setState({user});
-  // }
+  onLogin = (user) => {
+    this.setState({user});
+  }
 
   chekUser() {
     checkUserService()
